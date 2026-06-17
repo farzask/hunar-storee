@@ -7,6 +7,7 @@ import Facilities from "@/components/Facilities";
 import Audience from "@/components/Audience";
 import Partnership from "@/components/Partnership";
 import FuturePlans from "@/components/FuturePlans";
+import PhotoBand from "@/components/PhotoBand";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 
@@ -23,6 +24,7 @@ export default function Home() {
         <Audience />
         <Partnership />
         <FuturePlans />
+        <PhotoBand />
         <Contact />
       </main>
       <Footer />

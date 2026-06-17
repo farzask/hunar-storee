@@ -1,21 +1,14 @@
 "use client";
 
 import Image from "next/image";
-import { programs, site } from "@/lib/content";
+import { media, programs, site } from "@/lib/content";
 
-/* Pull up to 4 real photos from the current programs for the mosaic.
-   Until photos are added, decorative fabric-swatch tiles stand in. */
-const mosaicPhotos = programs
+/* One accent photo from each current program to overlap the hero feature. */
+const accentPhotos = programs
   .filter((p) => p.status === "current")
-  .flatMap((p) => p.gallery)
-  .slice(0, 4);
-
-const swatchTiles = [
-  { color: "bg-terracotta", label: "Sewing", rotate: "-rotate-3" },
-  { color: "bg-teal", label: "Embroidery", rotate: "rotate-2" },
-  { color: "bg-gold", label: "Crochet", rotate: "rotate-3" },
-  { color: "bg-terracotta-dark", label: "Tailoring", rotate: "-rotate-2" },
-];
+  .map((p) => p.gallery[0])
+  .filter(Boolean)
+  .slice(0, 2);
 
 export default function Hero() {
   return (
@@ -107,53 +100,58 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* ---------------- Right: hand-arranged mosaic ---------------- */}
+        {/* ---------------- Right: feature photo + overlapping accents ---- */}
         <div className="relative mx-auto h-[26rem] w-full max-w-md sm:h-[30rem]">
-          {(mosaicPhotos.length > 0
-            ? mosaicPhotos
-            : swatchTiles
-          ).map((tile, i) => {
-            const positions = [
-              "left-0 top-4 h-52 w-40 -rotate-3",
-              "right-2 top-0 h-44 w-36 rotate-3",
-              "left-8 bottom-0 h-44 w-36 rotate-2",
-              "right-0 bottom-8 h-52 w-44 -rotate-2",
-            ];
-            const pos = positions[i % positions.length];
-            const isPhoto = "src" in tile;
-            return (
-              <div
-                key={i}
-                className={`float-in absolute overflow-hidden rounded-2xl border-4 border-white shadow-xl ${pos}`}
-                style={{ animationDelay: `${0.15 * i + 0.2}s` }}
-              >
-                {isPhoto ? (
-                  <Image
-                    src={tile.src}
-                    alt={tile.alt}
-                    fill
-                    sizes="200px"
-                    className="object-cover"
-                  />
-                ) : (
-                  <div
-                    className={`flex h-full w-full flex-col items-center justify-center gap-3 ${tile.color}`}
-                  >
-                    <StitchMark />
-                    <span className="font-heading text-sm font-semibold uppercase tracking-widest text-white/90">
-                      {tile.label}
-                    </span>
-                  </div>
-                )}
-              </div>
-            );
-          })}
-
-          {/* small floating thread spool accent */}
+          {/* dashed thread-spool accent behind */}
           <div
             aria-hidden
-            className="absolute left-1/2 top-1/2 -z-10 h-24 w-24 -translate-x-1/2 -translate-y-1/2 rounded-full border-[10px] border-dashed border-gold/50"
+            className="absolute -right-4 -top-4 h-28 w-28 rounded-full border-[10px] border-dashed border-gold/50"
           />
+          <div
+            aria-hidden
+            className="absolute -bottom-5 left-6 h-3 w-3 rotate-45 bg-terracotta"
+          />
+
+          {/* main establishing photo */}
+          <div className="float-in absolute inset-x-2 top-2 bottom-10 -rotate-2 overflow-hidden rounded-3xl border-4 border-white shadow-2xl">
+            <Image
+              src={media.heroFeature.src}
+              alt={media.heroFeature.alt}
+              fill
+              sizes="(max-width: 1024px) 90vw, 460px"
+              className="object-cover"
+              priority
+            />
+          </div>
+
+          {/* overlapping program accent photos */}
+          {accentPhotos.map((img, i) => (
+            <div
+              key={img.src}
+              className={`float-in absolute overflow-hidden rounded-2xl border-4 border-white shadow-xl ${
+                i === 0
+                  ? "bottom-0 left-0 h-36 w-28 rotate-3"
+                  : "right-0 bottom-12 h-32 w-24 -rotate-3"
+              }`}
+              style={{ animationDelay: `${0.25 * (i + 1)}s` }}
+            >
+              <Image
+                src={img.src}
+                alt={img.alt}
+                fill
+                sizes="140px"
+                className="object-cover"
+              />
+            </div>
+          ))}
+
+          {/* small stitch badge */}
+          <div
+            aria-hidden
+            className="absolute -left-3 top-10 grid h-14 w-14 place-items-center rounded-2xl bg-teal shadow-lg"
+          >
+            <StitchMark />
+          </div>
         </div>
       </div>
     </section>

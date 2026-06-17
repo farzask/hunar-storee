@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { navLinks, site } from "@/lib/content";
 
 export default function Footer() {
@@ -5,9 +6,15 @@ export default function Footer() {
     <footer className="bg-ink text-cream/80">
       <div className="mx-auto grid w-full max-w-6xl gap-8 px-5 py-12 sm:px-8 md:grid-cols-[1.5fr_1fr]">
         <div>
-          <div className="flex items-center gap-2.5">
-            <span className="grid h-9 w-9 place-items-center rounded-lg bg-terracotta font-heading text-lg font-bold text-cream">
-              H
+          <div className="flex items-center gap-3">
+            <span className="grid h-12 w-12 place-items-center overflow-hidden rounded-xl bg-white p-1.5">
+              <Image
+                src={site.logo}
+                alt={`${site.name} logo`}
+                width={96}
+                height={96}
+                className="h-full w-full object-contain"
+              />
             </span>
             <span className="font-heading text-lg font-bold text-cream">
               {site.name}

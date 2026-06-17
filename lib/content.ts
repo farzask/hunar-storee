@@ -14,6 +14,19 @@ export const site = {
   shortName: "Hunar",
   tagline: "Skills for Life, Opportunity for All",
   positioning: "Empowering Women & Youth Through Skills Development",
+  logo: "/images/logo.jpeg",
+};
+
+/* -------- Feature photos (not tied to a single program) -------- */
+export const media = {
+  heroFeature: {
+    src: "/images/hero/hero.jpeg",
+    alt: "Trainees learning embroidery together in a group session at Hunar Vocational Training Centre",
+  },
+  band: {
+    src: "/images/bottom hero.jpeg",
+    alt: "Trainees sewing at machines during a class at Hunar Vocational Training Centre",
+  },
 };
 
 /* -------- Navigation (anchors into the single page) -------- */
@@ -52,9 +65,16 @@ export const programs: Program[] = [
     description:
       "Foundational stitching, garment construction and machine skills — the cornerstone of home-based income and self-employment.",
     status: "current",
-    // Example once you add photos:
-    // { src: "/images/programs/sewing/dress-1.jpg", alt: "Hand-stitched cotton dress" },
-    gallery: [],
+    gallery: [
+      { src: "/images/programs/sewing/sewing-1.jpeg", alt: "Sewing program at Hunar — trainee work (1)" },
+      { src: "/images/programs/sewing/sewing-2.jpeg", alt: "Sewing program at Hunar — trainee work (2)" },
+      { src: "/images/programs/sewing/sewing-3.jpeg", alt: "Sewing program at Hunar — trainee work (3)" },
+      { src: "/images/programs/sewing/sewing-4.jpeg", alt: "Sewing program at Hunar — trainee work (4)" },
+      { src: "/images/programs/sewing/sewing-5.jpeg", alt: "Sewing program at Hunar — trainee work (5)" },
+      { src: "/images/programs/sewing/sewing-6.jpeg", alt: "Sewing program at Hunar — trainee work (6)" },
+      { src: "/images/programs/sewing/sewing-7.jpeg", alt: "Sewing program at Hunar — trainee work (7)" },
+      { src: "/images/programs/sewing/sewing-8.jpeg", alt: "Sewing program at Hunar — trainee work (8)" },
+    ],
   },
   {
     slug: "embroidery",
@@ -62,7 +82,16 @@ export const programs: Program[] = [
     description:
       "Decorative hand and machine embroidery techniques to add value, artistry and marketability to finished pieces.",
     status: "current",
-    gallery: [],
+    gallery: [
+      { src: "/images/programs/embroidery/embroidary-1.jpeg", alt: "Embroidery program at Hunar — trainee work (1)" },
+      { src: "/images/programs/embroidery/embroidary-2.jpeg", alt: "Embroidery program at Hunar — trainee work (2)" },
+      { src: "/images/programs/embroidery/embroidary-3.jpeg", alt: "Embroidery program at Hunar — trainee work (3)" },
+      { src: "/images/programs/embroidery/embroidary-4.jpeg", alt: "Embroidery program at Hunar — trainee work (4)" },
+      { src: "/images/programs/embroidery/embroidary-5.jpeg", alt: "Embroidery program at Hunar — trainee work (5)" },
+      { src: "/images/programs/embroidery/embroidary-6.jpeg", alt: "Embroidery program at Hunar — trainee work (6)" },
+      { src: "/images/programs/embroidery/embroidary-7.jpeg", alt: "Embroidery program at Hunar — trainee work (7)" },
+      { src: "/images/programs/embroidery/embroidary-8.jpeg", alt: "Embroidery program at Hunar — trainee work (8)" },
+    ],
   },
   {
     slug: "crochet",

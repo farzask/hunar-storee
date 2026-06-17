@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import { navLinks, site } from "@/lib/content";
 
 export default function Header() {
@@ -24,8 +25,15 @@ export default function Header() {
     >
       <nav className="mx-auto flex w-full max-w-6xl items-center justify-between px-5 py-4 sm:px-8">
         <a href="#top" className="flex items-center gap-2.5" aria-label={site.name}>
-          <span className="grid h-9 w-9 place-items-center rounded-lg bg-terracotta font-heading text-lg font-bold text-cream">
-            H
+          <span className="grid h-11 w-11 place-items-center overflow-hidden rounded-xl bg-white p-1 ring-1 ring-cream-deep">
+            <Image
+              src={site.logo}
+              alt={`${site.name} logo`}
+              width={88}
+              height={88}
+              className="h-full w-full object-contain"
+              priority
+            />
           </span>
           <span className="font-heading text-lg font-bold leading-none text-ink">
             {site.shortName}

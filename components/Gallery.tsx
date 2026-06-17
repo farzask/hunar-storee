@@ -33,7 +33,7 @@ export default function Gallery() {
       id="gallery"
       eyebrow="Our Work"
       title="Made by our trainees"
-      intro="Photos from our programs. Add images per program in lib/content.ts."
+      intro="A look at our trainees at work — and the skills they're building, program by program."
     >
       <div className="space-y-14">
         {groups.map((group) => (
