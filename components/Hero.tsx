@@ -14,7 +14,7 @@ export default function Hero() {
   return (
     <section
       id="top"
-      className="relative overflow-hidden bg-cream pt-28 pb-20 sm:pt-32 sm:pb-28"
+      className="relative overflow-hidden bg-cream pt-21 pb-20 sm:pt-23 sm:pb-28"
     >
       {/* soft background wash */}
       <div

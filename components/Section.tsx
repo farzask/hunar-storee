@@ -23,10 +23,10 @@ export default function Section({
   children,
 }: SectionProps) {
   return (
-    <section id={id} className={`scroll-mt-20 py-20 sm:py-24 ${className}`}>
+    <section id={id} className={`scroll-mt-20 py-12 sm:py-16 ${className}`}>
       <div className="mx-auto w-full max-w-6xl px-5 sm:px-8">
         {(eyebrow || title || intro) && (
-          <header className="mb-12 max-w-2xl">
+          <header className="mb-8 max-w-2xl">
             {eyebrow && (
               <p className="mb-3 inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.2em] text-terracotta">
                 <span className="h-px w-8 bg-terracotta" aria-hidden />

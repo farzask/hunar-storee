@@ -1,14 +1,3 @@
-/* ==================================================================
- * Hunar Vocational Training Centre — site content
- * ------------------------------------------------------------------
- * SINGLE SOURCE OF TRUTH. Edit text, programs, gallery images and
- * contact details here — no need to touch the components.
- *
- * To add gallery photos:
- *   1. Drop image files into  public/images/programs/<slug>/
- *   2. Add an entry to that program's `gallery` array below.
- * ================================================================== */
-
 export const site = {
   name: "Hunar Vocational Training Centre",
   shortName: "Hunar",
