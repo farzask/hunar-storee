@@ -3,7 +3,7 @@ export const site = {
   shortName: "Hunar",
   tagline: "Skills for Life, Opportunity for All",
   positioning: "Empowering Women & Youth Through Skills Development",
-  logo: "/images/logo.jpeg",
+  logo: "/images/logo.png",
 };
 
 /* -------- Feature photos (not tied to a single program) -------- */
@@ -173,7 +173,7 @@ export const futurePlans: string[] = [
 export const contact = {
   address: "[ Add your centre address ]",
   phone: "[ Add phone number ]",
-  email: "[ Add email address ]",
+  email: "hunarstori2026@gmail.com",
   contactPerson: "[ Add contact person ]",
   whatsapp: "", // e.g. "923001234567" — leave "" to hide the WhatsApp button
 };

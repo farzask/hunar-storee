@@ -29,6 +29,15 @@ export default function Hero() {
       <div className="relative mx-auto grid w-full max-w-6xl items-center gap-14 px-5 sm:px-8 lg:grid-cols-[1.05fr_0.95fr]">
         {/* ---------------- Left: editorial headline ---------------- */}
         <div className="float-in">
+          <div className="mb-6">
+            <span className="font-heading text-3xl font-bold leading-none text-ink sm:text-4xl">
+              {site.shortName}
+            </span>
+            <span className="mt-1 block text-xs font-semibold uppercase tracking-[0.22em] text-teal">
+              Vocational Centre
+            </span>
+          </div>
+
           <p className="mb-5 inline-flex items-center gap-2 rounded-full border border-terracotta-soft bg-white/60 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.18em] text-terracotta">
             Community Skills Development Centre
           </p>

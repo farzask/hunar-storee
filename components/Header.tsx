@@ -24,23 +24,15 @@ export default function Header() {
       }`}
     >
       <nav className="mx-auto flex w-full max-w-6xl items-center justify-between px-5 py-4 sm:px-8">
-        <a href="#top" className="flex items-center gap-2.5" aria-label={site.name}>
-          <span className="grid h-11 w-11 place-items-center overflow-hidden rounded-xl bg-white p-1 ring-1 ring-cream-deep">
-            <Image
-              src={site.logo}
-              alt={`${site.name} logo`}
-              width={88}
-              height={88}
-              className="h-full w-full object-contain"
-              priority
-            />
-          </span>
-          <span className="font-heading text-lg font-bold leading-none text-ink">
-            {site.shortName}
-            <span className="block text-[0.62rem] font-semibold uppercase tracking-[0.18em] text-teal">
-              Vocational Centre
-            </span>
-          </span>
+        <a href="#top" className="flex items-center" aria-label={site.name}>
+          <Image
+            src={site.logo}
+            alt={`${site.name} logo`}
+            width={160}
+            height={160}
+            className="h-16 w-16 object-contain sm:h-20 sm:w-20"
+            priority
+          />
         </a>
 
         {/* Desktop nav */}
