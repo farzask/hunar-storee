@@ -31,7 +31,7 @@ export default function Hero() {
         <div className="float-in">
           <div className="mb-6">
             <span className="font-heading text-3xl font-bold leading-none text-ink sm:text-4xl">
-              {site.shortName}
+              Hunar Storee
             </span>
             <span className="mt-1 block text-xs font-semibold uppercase tracking-[0.22em] text-teal">
               Vocational Centre
